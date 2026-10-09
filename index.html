@@ -1,134 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>B1 English Reading & Critical Comprehension</title>
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --primary: #2563eb;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --correct: #16a34a;
-      --wrong: #dc2626;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      margin: 0;
-      padding: 2rem 1rem;
-    }
-    .container {
-      max-width: 780px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      padding: 2rem;
-    }
-    h1 {
-      margin-top: 0;
-      font-size: 1.6rem;
-      color: #0f172a;
-    }
-    .text-box {
-      background: #f1f5f9;
-      border-left: 4px solid var(--primary);
-      padding: 1.25rem 1.5rem;
-      border-radius: 6px;
-      font-family: "Courier New", Courier, monospace;
-      font-size: 0.95rem;
-      line-height: 1.8;
-      margin-bottom: 2rem;
-    }
-    .line {
-      display: flex;
-    }
-    .line-no {
-      width: 2.2rem;
-      color: var(--muted);
-      user-select: none;
-      font-weight: bold;
-    }
-    .question-block {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-    .question-title {
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-    }
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    .option-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-    button#submit-btn {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 1rem;
-    }
-    button#submit-btn:hover {
-      background: #1d4ed8;
-    }
-    #result {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      border-radius: 6px;
-      display: none;
-      font-weight: 600;
-      text-align: center;
-    }
-    .badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      padding: 2px 6px;
-      border-radius: 4px;
-      margin-left: 6px;
-      font-weight: bold;
-    }
-    .badge-correct { background: #dcfce7; color: var(--correct); }
-    .badge-wrong { background: #fee2e2; color: var(--wrong); }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Reading Comprehension: The Quiet Paradox</h1>
-    
-    <!-- 15-line reading passage -->
-    <div class="text-box">
-      <div class="line"><span class="line-no">01</span><span>In recent years, our devices promised absolute liberation from workplace constraints.</span></div>
-      <div class="line"><span class="line-no">02</span><span>Instead, the digital tether has gradually lengthened rather than disappeared altogether.</span></div>
-      <div class="line"><span class="line-no">03</span><span>We eagerly glance at illuminated notifications during late evening hours out of habit.</span></div>
-      <div class="line"><span class="line-no">04</span><span>Modern workers claim to cherish autonomy, yet voluntary surveillance is widely accepted.</span></div>
-      <div class="line"><span class="line-no">05</span><span>Silence now feels distinctly uncomfortable in rooms once dedicated to deep reflection.</span></div>
-      <div class="line"><span class="line-no">06</span><span>An urgent message rarely contains genuinely indispensable information, despite its tone.</span></div>
-      <div class="line"><span class="line-no">07</span><span>Nevertheless, the immediate compulsion to answer immediately undermines quiet contemplation.</span></div>
-      <div class="line"><span class="line-no">08</span><span>Efficiency is celebrated as a moral virtue rather than a practical instrument.</span></div>
-      <div class="line"><span class="line-no">09</span><span>Colleagues mistake hyper-responsiveness for genuine competence or creative problem solving.</span></div>
-      <div class="line"><span class="line-no">10</span><span>Consequently, profound cognitive exhaustion spreads under the gentle disguise of dedication.</span></div>
-      <div class="line"><span class="line-no">11</span><span>Few professionals dare to disconnect completely, terrified of being perceived as uncommitted.</span></div>
-      <div class="line"><span class="line-no">12</span><span>Even planned leisure frequently turns into subtle preparation for upcoming responsibilities.</span></div>
-      <div class="line"><span class="line-no">13</span><span>The boundary separating domestic repose from commercial obligation has practically dissolved.</span></div>
-      <div class="line"><span class="line-no">14</span><span>Reclaiming focus requires deliberate friction against the pervasive pressure of modern flow
+# Reading Comprehension: Urban Wildlife Adaptation (Level B1+)
+
+Read the following passage carefully and evaluate the statements below as **TRUE**, **FALSE**, or **NOT GIVEN**.
+
+---
+
+### Reading Passage
+1  In recent decades, metropolitan landscapes have witnessed an unprecedented influx of wild fauna.
+2  Contrary to common belief, these animals are not merely straying from depleted natural reserves.
+3  Instead, species such as urban foxes, raccoons, and corvids actively colonize residential areas.
+4  This behavior is largely motivated by the abundance of easily accessible anthropogenic food waste.
+5  However, human proximity introduces several unpredictable hazards, including vehicular traffic.
+6  To cope with these anthropogenic threats, urban animals often adjust their circadian rhythms.
+7  A notable example is the coyote, which increasingly adopts nocturnal habits in built-up districts.
+8  Behavioral ecologists have also documented a marked rise in problem-solving persistence.
+9  City-dwelling specimens tend to tackle unfamiliar obstacles far faster than rural counterparts.
+10 While some biologists argue that cities act as evolutionary engines favoring distinct traits,
+11 others warn that reliance on human leftovers could disrupt critical dietary requirements.
+12 Despite these nutritional drawbacks, overall metropolitan animal densities continue to surge.
+13 Consequently, municipal councils are being forced to rethink conventional sanitation designs.
+14 Advanced animal-proof waste bins are now standard installations across multiple capitals.
+15 Whether this ongoing coexistence remains sustainable in the long term remains an open question.
+
+---
+
+### Exercise: True, False, or Not Given
+
+1. Wild creatures migrate to suburban neighborhoods solely because their natural environments have been destroyed.
+   * **Answer:** FALSE
+   * **Explanation:** Line 2 and 3 state: *"Contrary to common belief, these animals are not merely straying from depleted natural reserves. Instead, species [...] actively colonize residential areas."* The word *solely* makes the statement incorrect.
+
+2. Readily available discarded groceries and leftovers encourage wildlife to settle in urban territories.
+   * **Answer:** TRUE
+   * **Explanation:** Line 4 explains that colonization is *"largely motivated by the abundance of easily accessible anthropogenic food waste."*
+
+3. Noise pollution causes more stress to urban animals than speeding automobiles.
+   * **Answer:** NOT GIVEN
+   * **Explanation:** Line 5 mentions vehicular traffic as a hazard (*"unpredictable hazards, including vehicular traffic"*), but acoustic/noise pollution and comparative stress levels are never mentioned in the text.
+
+4. Coyotes alter their sleep-wake cycles so they can hunt domestic pets late at night.
+   * **Answer:** NOT GIVEN
+   * **Explanation:** Line 7 notes that coyotes adopt nocturnal habits to cope with threats (*"adjust their circadian rhythms"*), but the passage never states that they do this to target domestic pets.
+
+5. Research indicates that urban fauna demonstrate greater cognitive tenacity when facing novel challenges.
+   * **Answer:** TRUE
+   * **Explanation:** Lines 8–9 state: *"ecologists have also documented a marked rise in problem-solving persistence. City-dwelling specimens tend to tackle unfamiliar obstacles far faster than rural counterparts."*
+
+6. Biologists have reached a unanimous consensus regarding the positive long-term impact of cities on wildlife evolution.
+   * **Answer:** FALSE
+   * **Explanation:** Lines 10–11 show a division of opinions (*"While some biologists argue... others warn"*), meaning there is no unanimous consensus.
+
+7. Consuming human food scrap provides city wildlife with superior nutritional health compared to a natural diet.
+   * **Answer:** FALSE
+   * **Explanation:** Line 11 highlights warnings that this reliance *"could disrupt critical dietary requirements,"* and line 12 explicitly refers to these as *"nutritional drawbacks."*
+
+8. Wildlife populations in urban centers have dropped sharply due to road accidents and poor nutrition.
+   * **Answer:** FALSE
+   * **Explanation:** Line 12 confirms the opposite: *"Despite these nutritional drawbacks, overall metropolitan animal densities continue to surge"* (surge means increase rapidly).
+
+9. Modern animal-resistant garbage containers have already eliminated urban fox foraging in every European capital.
+   * **Answer:** NOT GIVEN
+   * **Explanation:** Line 14 mentions that *"Advanced animal-proof waste bins are now standard installations across multiple capitals,"* but it does not claim they have completely eliminated foraging, nor does it specify all European capitals.
+
+10. Experts are completely confident that the mutual coexistence between urban dwellers and wildlife will endure indefinitely.
+    * **Answer:** FALSE
+    * **Explanation:** Line 15 concludes that *"Whether this ongoing coexistence remains sustainable in the long term remains an open question,"* which directly contradicts being "completely confident."
