@@ -1,66 +1,191 @@
-# Reading Comprehension: Urban Wildlife Adaptation (Level B1+)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading Activity - B1+ True / False / Not Given</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --primary: #2563eb;
+      --border: #e2e8f0;
+      --correct-bg: #dcfce7;
+      --correct-text: #166534;
+      --wrong-bg: #fee2e2;
+      --wrong-text: #991b1b;
+    }
 
-Read the following passage carefully and evaluate the statements below as **TRUE**, **FALSE**, or **NOT GIVEN**.
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 2rem 1rem;
+    }
 
----
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    }
 
-### Reading Passage
-1  In recent decades, metropolitan landscapes have witnessed an unprecedented influx of wild fauna.
-2  Contrary to common belief, these animals are not merely straying from depleted natural reserves.
-3  Instead, species such as urban foxes, raccoons, and corvids actively colonize residential areas.
-4  This behavior is largely motivated by the abundance of easily accessible anthropogenic food waste.
-5  However, human proximity introduces several unpredictable hazards, including vehicular traffic.
-6  To cope with these anthropogenic threats, urban animals often adjust their circadian rhythms.
-7  A notable example is the coyote, which increasingly adopts nocturnal habits in built-up districts.
-8  Behavioral ecologists have also documented a marked rise in problem-solving persistence.
-9  City-dwelling specimens tend to tackle unfamiliar obstacles far faster than rural counterparts.
-10 While some biologists argue that cities act as evolutionary engines favoring distinct traits,
-11 others warn that reliance on human leftovers could disrupt critical dietary requirements.
-12 Despite these nutritional drawbacks, overall metropolitan animal densities continue to surge.
-13 Consequently, municipal councils are being forced to rethink conventional sanitation designs.
-14 Advanced animal-proof waste bins are now standard installations across multiple capitals.
-15 Whether this ongoing coexistence remains sustainable in the long term remains an open question.
+    h1 {
+      margin-top: 0;
+      color: #0f172a;
+    }
 
----
+    .passage {
+      background: #f1f5f9;
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+      margin-bottom: 2rem;
+      font-family: Georgia, serif;
+    }
 
-### Exercise: True, False, or Not Given
+    .line {
+      display: flex;
+      margin-bottom: 0.35rem;
+    }
 
-1. Wild creatures migrate to suburban neighborhoods solely because their natural environments have been destroyed.
-   * **Answer:** FALSE
-   * **Explanation:** Line 2 and 3 state: *"Contrary to common belief, these animals are not merely straying from depleted natural reserves. Instead, species [...] actively colonize residential areas."* The word *solely* makes the statement incorrect.
+    .line-number {
+      width: 32px;
+      color: #64748b;
+      font-size: 0.85rem;
+      user-select: none;
+      flex-shrink: 0;
+    }
 
-2. Readily available discarded groceries and leftovers encourage wildlife to settle in urban territories.
-   * **Answer:** TRUE
-   * **Explanation:** Line 4 explains that colonization is *"largely motivated by the abundance of easily accessible anthropogenic food waste."*
+    .question-block {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
 
-3. Noise pollution causes more stress to urban animals than speeding automobiles.
-   * **Answer:** NOT GIVEN
-   * **Explanation:** Line 5 mentions vehicular traffic as a hazard (*"unpredictable hazards, including vehicular traffic"*), but acoustic/noise pollution and comparative stress levels are never mentioned in the text.
+    .question-text {
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
 
-4. Coyotes alter their sleep-wake cycles so they can hunt domestic pets late at night.
-   * **Answer:** NOT GIVEN
-   * **Explanation:** Line 7 notes that coyotes adopt nocturnal habits to cope with threats (*"adjust their circadian rhythms"*), but the passage never states that they do this to target domestic pets.
+    .options {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
 
-5. Research indicates that urban fauna demonstrate greater cognitive tenacity when facing novel challenges.
-   * **Answer:** TRUE
-   * **Explanation:** Lines 8–9 state: *"ecologists have also documented a marked rise in problem-solving persistence. City-dwelling specimens tend to tackle unfamiliar obstacles far faster than rural counterparts."*
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
 
-6. Biologists have reached a unanimous consensus regarding the positive long-term impact of cities on wildlife evolution.
-   * **Answer:** FALSE
-   * **Explanation:** Lines 10–11 show a division of opinions (*"While some biologists argue... others warn"*), meaning there is no unanimous consensus.
+    .feedback {
+      display: none;
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
 
-7. Consuming human food scrap provides city wildlife with superior nutritional health compared to a natural diet.
-   * **Answer:** FALSE
-   * **Explanation:** Line 11 highlights warnings that this reliance *"could disrupt critical dietary requirements,"* and line 12 explicitly refers to these as *"nutritional drawbacks."*
+    .feedback.correct {
+      display: block;
+      background-color: var(--correct-bg);
+      color: var(--correct-text);
+    }
 
-8. Wildlife populations in urban centers have dropped sharply due to road accidents and poor nutrition.
-   * **Answer:** FALSE
-   * **Explanation:** Line 12 confirms the opposite: *"Despite these nutritional drawbacks, overall metropolitan animal densities continue to surge"* (surge means increase rapidly).
+    .feedback.incorrect {
+      display: block;
+      background-color: var(--wrong-bg);
+      color: var(--wrong-text);
+    }
 
-9. Modern animal-resistant garbage containers have already eliminated urban fox foraging in every European capital.
-   * **Answer:** NOT GIVEN
-   * **Explanation:** Line 14 mentions that *"Advanced animal-proof waste bins are now standard installations across multiple capitals,"* but it does not claim they have completely eliminated foraging, nor does it specify all European capitals.
+    button#submit-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      display: block;
+      margin: 2rem auto 0;
+    }
 
-10. Experts are completely confident that the mutual coexistence between urban dwellers and wildlife will endure indefinitely.
-    * **Answer:** FALSE
-    * **Explanation:** Line 15 concludes that *"Whether this ongoing coexistence remains sustainable in the long term remains an open question,"* which directly contradicts being "completely confident."
+    button#submit-btn:hover {
+      background: #1d4ed8;
+    }
+
+    #score-banner {
+      display: none;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Reading Comprehension (B1+)</h1>
+    <p>Read the text and decide whether each statement is <strong>TRUE</strong>, <strong>FALSE</strong>, or <strong>NOT GIVEN</strong>.</p>
+
+    <!-- Reading Passage (15 lines) -->
+    <div class="passage">
+      <div class="line"><span class="line-number">1</span><span>In recent decades, metropolitan landscapes have witnessed an unprecedented influx of wild fauna.</span></div>
+      <div class="line"><span class="line-number">2</span><span>Contrary to common belief, these animals are not merely straying from depleted natural reserves.</span></div>
+      <div class="line"><span class="line-number">3</span><span>Instead, species such as urban foxes, raccoons, and corvids actively colonize residential areas.</span></div>
+      <div class="line"><span class="line-number">4</span><span>This behavior is largely motivated by the abundance of easily accessible anthropogenic food waste.</span></div>
+      <div class="line"><span class="line-number">5</span><span>However, human proximity introduces several unpredictable hazards, including vehicular traffic.</span></div>
+      <div class="line"><span class="line-number">6</span><span>To cope with these anthropogenic threats, urban animals often adjust their circadian rhythms.</span></div>
+      <div class="line"><span class="line-number">7</span><span>A notable example is the coyote, which increasingly adopts nocturnal habits in built-up districts.</span></div>
+      <div class="line"><span class="line-number">8</span><span>Behavioral ecologists have also documented a marked rise in problem-solving persistence.</span></div>
+      <div class="line"><span class="line-number">9</span><span>City-dwelling specimens tend to tackle unfamiliar obstacles far faster than rural counterparts.</span></div>
+      <div class="line"><span class="line-number">10</span><span>While some biologists argue that cities act as evolutionary engines favoring distinct traits,</span></div>
+      <div class="line"><span class="line-number">11</span><span>others warn that reliance on human leftovers could disrupt critical dietary requirements.</span></div>
+      <div class="line"><span class="line-number">12</span><span>Despite these nutritional drawbacks, overall metropolitan animal densities continue to surge.</span></div>
+      <div class="line"><span class="line-number">13</span><span>Consequently, municipal councils are being forced to rethink conventional sanitation designs.</span></div>
+      <div class="line"><span class="line-number">14</span><span>Advanced animal-proof waste bins are now standard installations across multiple capitals.</span></div>
+      <div class="line"><span class="line-number">15</span><span>Whether this ongoing coexistence remains sustainable in the long term remains an open question.</span></div>
+    </div>
+
+    <!-- 10 Exercises -->
+    <form id="quiz-form">
+      
+      <div class="question-block" data-answer="FALSE" data-expl="Line 2 and 3 state: 'Contrary to common belief, these animals are not merely straying from depleted natural reserves.' The word 'solely' contradicts the text.">
+        <div class="question-text">1. Wild creatures migrate to suburban neighborhoods solely because their natural environments have been destroyed.</div>
+        <div class="options">
+          <label><input type="radio" name="q1" value="TRUE"> True</label>
+          <label><input type="radio" name="q1" value="FALSE"> False</label>
+          <label><input type="radio" name="q1" value="NOT GIVEN"> Not Given</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question-block" data-answer="TRUE" data-expl="Line 4 specifies that colonization is 'largely motivated by the abundance of easily accessible anthropogenic food waste.'">
+        <div class="question-text">2. Readily available discarded groceries and leftovers encourage wildlife to settle in urban territories.</div>
+        <div class="options">
+          <label><input type="radio" name="q2" value="TRUE"> True</label>
+          <label><input type="radio" name="q2" value="FALSE"> False</label>
+          <label><input type="radio" name="q2" value="NOT GIVEN"> Not Given</label>
+        </div>
+        <div class="feedback"></div>
+      </div>
+
+      <div class="question-block" data-answer="NOT G
+                                                     
